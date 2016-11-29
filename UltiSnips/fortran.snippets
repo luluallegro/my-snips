@@ -1,0 +1,163 @@
+snippet pri "program implicit none" b
+program	${1:main}
+	${2:implicit none}
+	$0
+end program $1
+endsnippet
+
+snippet sup "subroutine with parameter" b
+subroutine ${1:`expand('%:r')`}(${2})
+	implicit none
+	$0
+end subroutine $1
+endsnippet
+
+snippet sub "subroutine without parameter" b
+subroutine ${1:`expand('%:r')`}
+	implicit none
+	$0
+end subroutine $1
+endsnippet
+
+snippet mod "module" b
+module ${1:`expand('%:r')`}
+	implicit none
+	save
+	$0
+end module $1
+endsnippet
+
+snippet fun "function" b
+function ${1:}(${2})
+	$0
+end function $1
+endsnippet
+
+snippet inp "integer, parameter" b
+integer, parameter :: $0
+endsnippet
+
+snippet int "integer" b
+integer :: $0
+endsnippet
+
+snippet ini "integer, intent(in)" b
+integer, intent(in) :: $0
+endsnippet
+
+snippet ino "integer, intent(out)" b
+integer, intent(out) :: $0
+endsnippet
+
+snippet rep "real, parameter" b
+real, parameter :: $0
+endsnippet
+
+snippet rel "real" b
+real :: $0
+endsnippet
+
+snippet rei "real, intent(in)" b
+real, intent(in) :: $0
+endsnippet
+
+snippet reo "real, intent(out)" b
+real, intent(out) :: $0
+endsnippet
+
+snippet ind "integer, dimension(:)" b
+integer, dimension(${1::})${2:, allocatable} :: $0
+endsnippet
+
+snippet indi "integer, dimension(:), intent(in)" b
+integer, dimension(${1}), intent(in)  :: $0
+endsnippet
+
+snippet indo "integer, dimension(:), intent(out)" b
+integer, dimension(${1}), intent(out)  :: $0
+endsnippet
+
+snippet red "real, dimension(:)" b
+real, dimension(${1::})${2:, allocatable} :: $0
+endsnippet
+
+snippet redi "real, dimension(:), intent(in)" b
+real, dimension(${1}), intent(in)  :: $0
+endsnippet
+
+snippet redo "real, dimension(:), intent(out)" b
+real, dimension(${1}), intent(out)  :: $0
+endsnippet
+
+snippet cha "character(:)" b
+character(${1}) :: $0
+endsnippet
+
+snippet chd "character(:), dimension(:)" b
+character(${1}), dimension(${2}) :: $0
+endsnippet
+
+snippet log "logical" b
+logical :: ${1:fileExsit}
+endsnippet
+
+snippet if "if()" b
+if (${1}) $0
+endsnippet
+
+snippet ift "if() then \end if" b
+if (${1}) then
+	$0
+end if
+endsnippet
+
+snippet read "read(*,*)" b
+read(${1:*},${2:*}) $0
+endsnippet
+
+snippet wri "write(*,*)" b
+write(${1:*},${2:*}) $0
+endsnippet
+
+snippet ope "open(11,file=...)" b
+open(${1:11},file=${2},status=${3:'old'}${4:,position='append'})
+	$0
+close($1)
+endsnippet
+
+snippet sel "select case \end select" b
+select case (${1})
+	$0
+end select
+endsnippet
+
+snippet case "case()" b
+case(${1})
+	$0
+endsnippet
+
+snippet do "do \end do" b
+do ${1}
+	$0
+end do
+endsnippet
+
+snippet typ "type \end type" b
+type ${1:}
+	$0
+end type $1
+endsnippet
+
+snippet tyd "type(), dimension()" b
+type(${1}), dimension(${2::}), allcatable :: $0
+endsnippet
+
+snippet doijk "do i=1,imax..." b
+do i=1,imax
+	do j=1,jmax
+		do k=1,kmax
+		$0
+		end do
+	end do
+end do
+endsnippet
